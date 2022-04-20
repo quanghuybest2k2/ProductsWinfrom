@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0f172ffa-bbd6-4259-8ed1-a9e261488718": {
+      "ProjectGuid": "0f172ffa-bbd6-4259-8ed1-a9e261488718",
+      "DisplayName": "Univesity Grade Calculator",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

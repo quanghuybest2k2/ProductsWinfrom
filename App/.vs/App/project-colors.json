@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "21a40c86-0695-4b9b-8255-f9b901298e5c": {
+      "ProjectGuid": "21a40c86-0695-4b9b-8255-f9b901298e5c",
+      "DisplayName": "UngDungVoTuongLai",
+      "ColorIndex": 0
+    },
+    "d66ee329-dae4-4aed-9314-1b2023d437b0": {
+      "ProjectGuid": "d66ee329-dae4-4aed-9314-1b2023d437b0",
+      "DisplayName": "Tao_Foms_v2",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
