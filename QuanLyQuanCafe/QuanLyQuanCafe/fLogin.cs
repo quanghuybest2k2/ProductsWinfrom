@@ -16,5 +16,29 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            e.Cancel = true;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            fTableManager frm = new fTableManager();
+            this.Hide();
+            frm.ShowDialog(); // ShowDialog(): Phải thực hiện, tắt đi thì Show() hiện lên
+            this.Show();
+        }
+        //21:50
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
