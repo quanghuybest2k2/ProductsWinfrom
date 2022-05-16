@@ -1,0 +1,6 @@
+﻿Hello
+What time is it
+Open Google Chrome
+Open Visual Studio Code
+Close Google
+Goodbye
