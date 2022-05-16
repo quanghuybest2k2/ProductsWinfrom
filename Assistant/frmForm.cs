@@ -3,6 +3,7 @@ using System.IO;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Assistant
 {
@@ -10,6 +11,7 @@ namespace Assistant
     {
         SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         SpeechSynthesizer speech = new SpeechSynthesizer();
+        SoundPlayer music = new SoundPlayer();
         public frmForm()
         {
             InitializeComponent();
@@ -37,28 +39,57 @@ namespace Assistant
             switch (result)
             {
                 case "Hello":
-                    result = "Hello, Can I help you?";
-                    break;
-                case "What time is it?":
-                    result = "It's currently " + DateTime.Now.ToLongTimeString();
-                    break;
+                    {
+                        result = "Hello, Can I help you?";
+                        break;
+                    }
+                case "What time is it":
+                    {
+                        result = "It's currently " + DateTime.Now.ToLongTimeString();
+                        break;
+                    }
                 case "Open Google Chrome":
-                    System.Diagnostics.Process.Start("https://www.google.com/");
-                    result = open + "Google Chrome";
-                    break;
+                    {
+                        System.Diagnostics.Process.Start("https://www.google.com/");
+                        result = open + "Google Chrome";
+                        break;
+                    }
                 case "Open Visual Studio Code":
-                    System.Diagnostics.Process.Start(@"C:\Users\quang\AppData\Local\Programs\Microsoft VS Code\Code.exe");
-                    result = open + "Visual Studio Code";
-                    break;
+                    {
+                        System.Diagnostics.Process.Start(@"C:\Users\quang\AppData\Local\Programs\Microsoft VS Code\Code.exe");
+                        result = open + "Visual Studio Code";
+                        break;
+                    }
                 case "Close Visual Studio Code":
-                    System.Diagnostics.Process[] close = System.Diagnostics.Process.GetProcessesByName("Code");
-                    foreach (System.Diagnostics.Process p in close)
-                        p.Kill();
-                    result = "Closing Visual Studio Code";
-                    break;
+                    {
+                        System.Diagnostics.Process[] close = System.Diagnostics.Process.GetProcessesByName("Code");
+                        foreach (System.Diagnostics.Process p in close)
+                        {
+                            p.Kill();
+                        }
+                        result = "Closing Visual Studio Code";
+                        break;
+                    }
+                case "There’s No One At All":
+                    {
+                        music.SoundLocation = "There’s No One At All.wav";//file wav
+                        result = "There’s No One At All by Sơn Tùng MTP";//There’s No One At All by Sơn Tùng MTP
+                        music.Play();
+                        
+                        break;
+                    }
+                case "Stop":
+                    {
+                        speech.SpeakAsyncCancelAll();
+                        music.Stop();
+                        result = "";//There’s No One At All by Sơn Tùng MTP
+                        break;
+                    }
                 case "Goodbye":
-                    Application.Exit();
-                    break;
+                    {
+                        Application.Exit();
+                        break;
+                    }
             }
             speech.SpeakAsync(result);
             lblKetQua.Text = result;

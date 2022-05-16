@@ -38,9 +38,9 @@ namespace Assistant
             this.lblLiveSpeech.AutoSize = true;
             this.lblLiveSpeech.Location = new System.Drawing.Point(91, 62);
             this.lblLiveSpeech.Name = "lblLiveSpeech";
-            this.lblLiveSpeech.Size = new System.Drawing.Size(67, 13);
+            this.lblLiveSpeech.Size = new System.Drawing.Size(52, 13);
             this.lblLiveSpeech.TabIndex = 0;
-            this.lblLiveSpeech.Text = "Live Speech";
+            this.lblLiveSpeech.Text = "Trợ Lý ảo";
             // 
             // lblKetQua
             // 
@@ -59,7 +59,8 @@ namespace Assistant
             this.Controls.Add(this.lblKetQua);
             this.Controls.Add(this.lblLiveSpeech);
             this.Name = "frmForm";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Trợ lý ảo";
             this.ResumeLayout(false);
             this.PerformLayout();
 

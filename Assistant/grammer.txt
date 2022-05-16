@@ -2,5 +2,7 @@
 What time is it
 Open Google Chrome
 Open Visual Studio Code
-Close Google
+Close Visual Studio Code
+There’s No One At All
+Stop
 Goodbye
