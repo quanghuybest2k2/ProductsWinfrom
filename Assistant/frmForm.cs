@@ -54,6 +54,16 @@ namespace Assistant
                         result = open + "Google Chrome";
                         break;
                     }
+                case "Close Google Chrome":
+                    {
+                        System.Diagnostics.Process[] close = System.Diagnostics.Process.GetProcessesByName("chrome");
+                        foreach (System.Diagnostics.Process p in close)
+                        {
+                            p.Kill();
+                        }
+                        result = "Closing Google Chrome";
+                        break;
+                    }
                 case "Open Visual Studio Code":
                     {
                         System.Diagnostics.Process.Start(@"C:\Users\quang\AppData\Local\Programs\Microsoft VS Code\Code.exe");
@@ -68,6 +78,11 @@ namespace Assistant
                             p.Kill();
                         }
                         result = "Closing Visual Studio Code";
+                        break;
+                    }
+                case "Today I'm sad":
+                    {
+                        result = "When you’re sad, try not to get upset with yourself. There's a reason you feel the way you do. “We lost — and I really wanted us to win. Now we can’t go to playoffs.” It’s natural to feel sad when something doesn’t work out as you hoped. “I guess other kids feel sad when they lose a big game. My teammates probably feel sad too.” Be kind and patient with yourself. Your sadness will pass, and you'll feel better.";
                         break;
                     }
                 case "There’s No One At All":
@@ -92,7 +107,8 @@ namespace Assistant
                     }
             }
             speech.SpeakAsync(result);
-            lblKetQua.Text = result;
+            //lblKetQua.Text = result;
+            rtbKetQua.Text = result;
         }
     }
 }

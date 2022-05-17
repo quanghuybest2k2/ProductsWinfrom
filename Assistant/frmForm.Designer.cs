@@ -29,35 +29,46 @@ namespace Assistant
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblLiveSpeech = new System.Windows.Forms.Label();
-            this.lblKetQua = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmForm));
+            this.rtbKetQua = new System.Windows.Forms.RichTextBox();
+            this.lblTittle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblLiveSpeech
+            // rtbKetQua
             // 
-            this.lblLiveSpeech.AutoSize = true;
-            this.lblLiveSpeech.Location = new System.Drawing.Point(91, 62);
-            this.lblLiveSpeech.Name = "lblLiveSpeech";
-            this.lblLiveSpeech.Size = new System.Drawing.Size(52, 13);
-            this.lblLiveSpeech.TabIndex = 0;
-            this.lblLiveSpeech.Text = "Trợ Lý ảo";
+            this.rtbKetQua.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.rtbKetQua.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbKetQua.ForeColor = System.Drawing.Color.White;
+            this.rtbKetQua.Location = new System.Drawing.Point(12, 82);
+            this.rtbKetQua.Name = "rtbKetQua";
+            this.rtbKetQua.Size = new System.Drawing.Size(548, 235);
+            this.rtbKetQua.TabIndex = 2;
+            this.rtbKetQua.Text = "";
             // 
-            // lblKetQua
+            // lblTittle
             // 
-            this.lblKetQua.AutoSize = true;
-            this.lblKetQua.Location = new System.Drawing.Point(94, 108);
-            this.lblKetQua.Name = "lblKetQua";
-            this.lblKetQua.Size = new System.Drawing.Size(44, 13);
-            this.lblKetQua.TabIndex = 1;
-            this.lblKetQua.Text = "Kết quả";
+            this.lblTittle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTittle.AutoSize = true;
+            this.lblTittle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lblTittle.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTittle.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblTittle.Location = new System.Drawing.Point(215, 26);
+            this.lblTittle.Name = "lblTittle";
+            this.lblTittle.Size = new System.Drawing.Size(99, 27);
+            this.lblTittle.TabIndex = 1;
+            this.lblTittle.Text = "Trợ lý ảo";
+            this.lblTittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblKetQua);
-            this.Controls.Add(this.lblLiveSpeech);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(572, 329);
+            this.Controls.Add(this.rtbKetQua);
+            this.Controls.Add(this.lblTittle);
             this.Name = "frmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trợ lý ảo";
@@ -67,9 +78,8 @@ namespace Assistant
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblLiveSpeech;
-        private System.Windows.Forms.Label lblKetQua;
+        private System.Windows.Forms.RichTextBox rtbKetQua;
+        private System.Windows.Forms.Label lblTittle;
     }
 }
 

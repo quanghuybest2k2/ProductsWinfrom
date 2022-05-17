@@ -1,8 +1,10 @@
 ﻿Hello
 What time is it
 Open Google Chrome
+Close Google Chrome
 Open Visual Studio Code
 Close Visual Studio Code
+Today I'm sad
 There’s No One At All
 Stop
 Goodbye
