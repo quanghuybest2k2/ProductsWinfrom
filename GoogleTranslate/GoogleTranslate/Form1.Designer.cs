@@ -39,6 +39,8 @@ namespace GoogleTranslate
             this.lblEN = new System.Windows.Forms.Label();
             this.lblVN = new System.Windows.Forms.Label();
             this.ptpHinh = new System.Windows.Forms.PictureBox();
+            this.btnSpeak = new System.Windows.Forms.Button();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.poisonStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptpHinh)).BeginInit();
             this.SuspendLayout();
@@ -76,12 +78,13 @@ namespace GoogleTranslate
             this.rtxtEN.Name = "rtxtEN";
             this.rtxtEN.Size = new System.Drawing.Size(313, 335);
             this.rtxtEN.TabIndex = 12;
-            this.rtxtEN.Text = "Kết quả dịch";
+            this.rtxtEN.Text = "Results show";
             // 
             // btnDichVanBan
             // 
             this.btnDichVanBan.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnDichVanBan.Location = new System.Drawing.Point(331, 200);
+            this.btnDichVanBan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDichVanBan.Location = new System.Drawing.Point(331, 227);
             this.btnDichVanBan.Name = "btnDichVanBan";
             this.btnDichVanBan.Size = new System.Drawing.Size(138, 54);
             this.btnDichVanBan.TabIndex = 14;
@@ -119,12 +122,39 @@ namespace GoogleTranslate
             this.ptpHinh.TabIndex = 16;
             this.ptpHinh.TabStop = false;
             // 
+            // btnSpeak
+            // 
+            this.btnSpeak.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSpeak.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpeak.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSpeak.Location = new System.Drawing.Point(331, 157);
+            this.btnSpeak.Name = "btnSpeak";
+            this.btnSpeak.Size = new System.Drawing.Size(138, 54);
+            this.btnSpeak.TabIndex = 17;
+            this.btnSpeak.Text = "Đọc văn bản";
+            this.btnSpeak.UseVisualStyleBackColor = false;
+            this.btnSpeak.Click += new System.EventHandler(this.btnSpeak_Click);
+            // 
+            // cbbGioiTinh
+            // 
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Giọng Nam",
+            "Giọng Nữ"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(331, 107);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(138, 26);
+            this.cbbGioiTinh.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbbGioiTinh);
+            this.Controls.Add(this.btnSpeak);
             this.Controls.Add(this.ptpHinh);
             this.Controls.Add(this.lblVN);
             this.Controls.Add(this.lblEN);
@@ -136,6 +166,7 @@ namespace GoogleTranslate
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Google Translate";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.poisonStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptpHinh)).EndInit();
             this.ResumeLayout(false);
@@ -152,6 +183,8 @@ namespace GoogleTranslate
         private System.Windows.Forms.Label lblEN;
         private System.Windows.Forms.Label lblVN;
         private System.Windows.Forms.PictureBox ptpHinh;
+        private System.Windows.Forms.Button btnSpeak;
+        private System.Windows.Forms.ComboBox cbbGioiTinh;
     }
 }
 
