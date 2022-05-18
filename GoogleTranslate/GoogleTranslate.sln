@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31423.177
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTranslate", "GoogleTranslate\GoogleTranslate.csproj", "{0F7C810E-8340-4A59-8D2F-B2DC29B88CBC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{CF2233B0-41D7-4BAA-84A7-5AC3139AD000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{0F7C810E-8340-4A59-8D2F-B2DC29B88CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F7C810E-8340-4A59-8D2F-B2DC29B88CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F7C810E-8340-4A59-8D2F-B2DC29B88CBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF2233B0-41D7-4BAA-84A7-5AC3139AD000}.Debug|Any CPU.ActiveCfg = Release
+		{CF2233B0-41D7-4BAA-84A7-5AC3139AD000}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

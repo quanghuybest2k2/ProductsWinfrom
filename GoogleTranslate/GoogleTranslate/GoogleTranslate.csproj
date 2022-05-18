@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>translate.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin">
       <HintPath>..\..\..\ThuVienUI\MaterialSkin.dll</HintPath>
@@ -99,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Google Translator C#.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="translate.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
