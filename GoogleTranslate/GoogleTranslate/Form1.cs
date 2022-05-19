@@ -51,7 +51,14 @@ namespace GoogleTranslate
         // Chọn ngôn ngữ
         private void btnDichVanBan_Click(object sender, EventArgs e)
         {
-            rtxtEN.Text = TranslateText(rtxtVN.Text);
+            if (rtxtVN.Text != "")
+            {
+                rtxtEN.Text = TranslateText(rtxtVN.Text);
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập chữ bên ô " + lblVN.Text+" nên không thể dịch", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSpeak_Click(object sender, EventArgs e)
@@ -68,15 +75,11 @@ namespace GoogleTranslate
             }
             else if (rtxtVN.Text == "")
             {
-                MessageBox.Show("Bạn phải nhập thông tin bên ô tiếng Việt!!! Sau đó nhấn dịch văn bản", "Lỗi thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa nhập chữ bên ô " + lblVN.Text + " nên không thể đọc", "Lỗi thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (rtxtEN.Text == "")
             {
-                MessageBox.Show("Không có chữ Tiếng Anh nên không thể đọc!!!", "Lỗi thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                MessageBox.Show("Bạn phải chọn giọng đọc!!!", "Lỗi thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không có chữ bên ô " + rtxtEN.Text + " nên không thể đọc", "Lỗi thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
