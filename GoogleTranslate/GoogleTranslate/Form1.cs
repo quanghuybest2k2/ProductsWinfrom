@@ -57,7 +57,7 @@ namespace GoogleTranslate
             }
             else
             {
-                MessageBox.Show("Bạn chưa nhập chữ bên ô " + lblVN.Text+" nên không thể dịch", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa nhập chữ bên ô " + lblVN.Text + " nên không thể dịch", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,6 +88,7 @@ namespace GoogleTranslate
             cbbGiongDoc.SelectedIndex = 0;//set default value
             cbbChonNgonNgu.SelectedIndex = 0;
             rtxtEN.Enabled = false; // không cho nhập
+            tsslSoKyTuNhap.Text = "Số ký tự nhập: " + rtxtVN.Text.Length.ToString();// mặc định text ban đầu
         }
 
         private void cbbChonNgonNgu_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,9 +105,9 @@ namespace GoogleTranslate
             }
         }
 
-        private void lblEN_Click(object sender, EventArgs e)
+        private void rtxtVN_TextChanged(object sender, EventArgs e)
         {
-
+            tsslSoKyTuNhap.Text = "Số ký tự nhập: " + rtxtVN.Text.Length.ToString();
         }
     }
 }

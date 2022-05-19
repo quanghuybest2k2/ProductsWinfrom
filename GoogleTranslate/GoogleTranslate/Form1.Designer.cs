@@ -42,9 +42,12 @@ namespace GoogleTranslate
             this.pnTop = new System.Windows.Forms.Panel();
             this.cbbChonNgonNgu = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.statusStripSoKyTuNhap = new System.Windows.Forms.StatusStrip();
+            this.tsslSoKyTuNhap = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ptpHinh)).BeginInit();
             this.pnTop.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.statusStripSoKyTuNhap.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTittle
@@ -70,6 +73,7 @@ namespace GoogleTranslate
             this.rtxtVN.Size = new System.Drawing.Size(313, 379);
             this.rtxtVN.TabIndex = 12;
             this.rtxtVN.Text = "Nhập nội dung văn bản....";
+            this.rtxtVN.TextChanged += new System.EventHandler(this.rtxtVN_TextChanged);
             // 
             // rtxtEN
             // 
@@ -104,7 +108,6 @@ namespace GoogleTranslate
             this.lblEN.Size = new System.Drawing.Size(57, 20);
             this.lblEN.TabIndex = 15;
             this.lblEN.Text = "English";
-            this.lblEN.Click += new System.EventHandler(this.lblEN_Click);
             // 
             // lblVN
             // 
@@ -180,6 +183,7 @@ namespace GoogleTranslate
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.statusStripSoKyTuNhap);
             this.panel1.Controls.Add(this.ptpHinh);
             this.panel1.Controls.Add(this.cbbChonNgonNgu);
             this.panel1.Controls.Add(this.lblEN);
@@ -194,6 +198,22 @@ namespace GoogleTranslate
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 475);
             this.panel1.TabIndex = 21;
+            // 
+            // statusStripSoKyTuNhap
+            // 
+            this.statusStripSoKyTuNhap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslSoKyTuNhap});
+            this.statusStripSoKyTuNhap.Location = new System.Drawing.Point(0, 453);
+            this.statusStripSoKyTuNhap.Name = "statusStripSoKyTuNhap";
+            this.statusStripSoKyTuNhap.Size = new System.Drawing.Size(800, 22);
+            this.statusStripSoKyTuNhap.TabIndex = 21;
+            this.statusStripSoKyTuNhap.Text = "Số ký tự nhập";
+            // 
+            // tsslSoKyTuNhap
+            // 
+            this.tsslSoKyTuNhap.Name = "tsslSoKyTuNhap";
+            this.tsslSoKyTuNhap.Size = new System.Drawing.Size(79, 17);
+            this.tsslSoKyTuNhap.Text = "Số ký tự nhập";
             // 
             // Form1
             // 
@@ -214,6 +234,8 @@ namespace GoogleTranslate
             this.pnTop.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.statusStripSoKyTuNhap.ResumeLayout(false);
+            this.statusStripSoKyTuNhap.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -231,6 +253,8 @@ namespace GoogleTranslate
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.ComboBox cbbChonNgonNgu;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.StatusStrip statusStripSoKyTuNhap;
+        private System.Windows.Forms.ToolStripStatusLabel tsslSoKyTuNhap;
     }
 }
 
