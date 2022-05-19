@@ -15,20 +15,22 @@ namespace TextToSpeechConvert
         // nut nói
         private void btnSpeak_Click_1(object sender, EventArgs e)
         {
-            if (richTextBox1.Text != "" && cbbGioiTinh.Text == "Nam")
-            {
-                speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
-                speech.SpeakAsync(richTextBox1.Text);
-            }
-            else if (richTextBox1.Text != "" && cbbGioiTinh.Text == "Nữ")
-            {
-                speech.SelectVoiceByHints(VoiceGender.Female); //giong nu
-                speech.SpeakAsync(richTextBox1.Text);
-            }
-            else
-            {
-                MessageBox.Show("Bạn phải điền thông tin vào!!!", "Lỗi thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            speech.SelectVoice(cbbGiongDoc.Text);
+            speech.SpeakAsync(richTextBox1.Text);
+            //if (richTextBox1.Text != "" && cbbGioiTinh.Text == "Nam")
+            //{
+            //    speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
+            //    speech.SpeakAsync(richTextBox1.Text);
+            //}
+            //else if (richTextBox1.Text != "" && cbbGioiTinh.Text == "Nữ")
+            //{
+            //    speech.SelectVoiceByHints(VoiceGender.Female); //giong nu
+            //    speech.SpeakAsync(richTextBox1.Text);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn phải điền thông tin vào!!!", "Lỗi thông tin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnPause_Click_1(object sender, EventArgs e)
@@ -41,6 +43,14 @@ namespace TextToSpeechConvert
         {
             if (speech.State == SynthesizerState.Paused)
                 speech.Resume();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            foreach (InstalledVoice voice in speech.GetInstalledVoices())
+            {
+                cbbGiongDoc.Items.Add(voice.VoiceInfo.Name);
+            }
         }
     }
 }

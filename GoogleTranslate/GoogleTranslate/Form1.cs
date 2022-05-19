@@ -56,12 +56,12 @@ namespace GoogleTranslate
 
         private void btnSpeak_Click(object sender, EventArgs e)
         {
-            if (rtxtVN.Text != "" && cbbGioiTinh.SelectedIndex == 0)
+            if (rtxtVN.Text != "" && cbbGiongDoc.SelectedIndex == 0)
             {
                 speech.SelectVoiceByHints(VoiceGender.Male); // giong nam
                 speech.SpeakAsync(rtxtEN.Text);
             }
-            else if (rtxtVN.Text != "" && cbbGioiTinh.SelectedIndex == 1)
+            else if (rtxtVN.Text != "" && cbbGiongDoc.SelectedIndex == 1)
             {
                 speech.SelectVoiceByHints(VoiceGender.Female); //giong nu
                 speech.SpeakAsync(rtxtEN.Text);
@@ -82,7 +82,7 @@ namespace GoogleTranslate
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cbbGioiTinh.SelectedIndex = 0;//set default value
+            cbbGiongDoc.SelectedIndex = 0;//set default value
             cbbChonNgonNgu.SelectedIndex = 0;
             rtxtEN.Enabled = false; // không cho nhập
         }
@@ -99,6 +99,11 @@ namespace GoogleTranslate
                 lblEN.Text = "English";
                 lblVN.Text = "Vietnamese";
             }
+        }
+
+        private void lblEN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,6 +36,7 @@ namespace TextToSpeechConvert
             this.btnPause = new XanderUI.XUIButton();
             this.btnTiepTuc = new XanderUI.XUIButton();
             this.lblGiongDoc = new System.Windows.Forms.Label();
+            this.cbbGiongDoc = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -57,7 +58,7 @@ namespace TextToSpeechConvert
             this.cbbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(554, 54);
+            this.cbbGioiTinh.Location = new System.Drawing.Point(620, 55);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(86, 26);
             this.cbbGioiTinh.TabIndex = 2;
@@ -132,11 +133,20 @@ namespace TextToSpeechConvert
             this.lblGiongDoc.BackColor = System.Drawing.Color.Transparent;
             this.lblGiongDoc.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiongDoc.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblGiongDoc.Location = new System.Drawing.Point(469, 54);
+            this.lblGiongDoc.Location = new System.Drawing.Point(513, 58);
             this.lblGiongDoc.Name = "lblGiongDoc";
             this.lblGiongDoc.Size = new System.Drawing.Size(89, 23);
             this.lblGiongDoc.TabIndex = 6;
             this.lblGiongDoc.Text = "Giọng đọc";
+            // 
+            // cbbGiongDoc
+            // 
+            this.cbbGiongDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbGiongDoc.FormattingEnabled = true;
+            this.cbbGiongDoc.Location = new System.Drawing.Point(546, 12);
+            this.cbbGiongDoc.Name = "cbbGiongDoc";
+            this.cbbGiongDoc.Size = new System.Drawing.Size(242, 28);
+            this.cbbGiongDoc.TabIndex = 7;
             // 
             // frmMain
             // 
@@ -144,6 +154,7 @@ namespace TextToSpeechConvert
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbbGiongDoc);
             this.Controls.Add(this.lblGiongDoc);
             this.Controls.Add(this.btnTiepTuc);
             this.Controls.Add(this.btnPause);
@@ -154,6 +165,7 @@ namespace TextToSpeechConvert
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyển văn bản thành giọng nói";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +179,7 @@ namespace TextToSpeechConvert
         private XanderUI.XUIButton btnPause;
         private XanderUI.XUIButton btnTiepTuc;
         private System.Windows.Forms.Label lblGiongDoc;
+        private System.Windows.Forms.ComboBox cbbGiongDoc;
     }
 }
 

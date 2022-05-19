@@ -38,11 +38,13 @@ namespace GoogleTranslate
             this.lblVN = new System.Windows.Forms.Label();
             this.ptpHinh = new System.Windows.Forms.PictureBox();
             this.btnSpeak = new System.Windows.Forms.Button();
-            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.cbbGiongDoc = new System.Windows.Forms.ComboBox();
             this.pnTop = new System.Windows.Forms.Panel();
             this.cbbChonNgonNgu = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ptpHinh)).BeginInit();
             this.pnTop.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTittle
@@ -60,28 +62,31 @@ namespace GoogleTranslate
             // 
             // rtxtVN
             // 
+            this.rtxtVN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rtxtVN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtVN.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.rtxtVN.Location = new System.Drawing.Point(12, 103);
+            this.rtxtVN.Location = new System.Drawing.Point(0, 42);
             this.rtxtVN.Name = "rtxtVN";
-            this.rtxtVN.Size = new System.Drawing.Size(313, 335);
+            this.rtxtVN.Size = new System.Drawing.Size(313, 379);
             this.rtxtVN.TabIndex = 12;
             this.rtxtVN.Text = "Nhập nội dung văn bản....";
             // 
             // rtxtEN
             // 
+            this.rtxtEN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rtxtEN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtEN.Location = new System.Drawing.Point(475, 103);
+            this.rtxtEN.Location = new System.Drawing.Point(475, 42);
             this.rtxtEN.Name = "rtxtEN";
-            this.rtxtEN.Size = new System.Drawing.Size(313, 335);
+            this.rtxtEN.Size = new System.Drawing.Size(313, 379);
             this.rtxtEN.TabIndex = 12;
             this.rtxtEN.Text = "Kết quả hiển thị";
             // 
             // btnDichVanBan
             // 
+            this.btnDichVanBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDichVanBan.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnDichVanBan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDichVanBan.Location = new System.Drawing.Point(331, 178);
+            this.btnDichVanBan.Location = new System.Drawing.Point(329, 138);
             this.btnDichVanBan.Name = "btnDichVanBan";
             this.btnDichVanBan.Size = new System.Drawing.Size(138, 54);
             this.btnDichVanBan.TabIndex = 14;
@@ -91,19 +96,22 @@ namespace GoogleTranslate
             // 
             // lblEN
             // 
+            this.lblEN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEN.AutoSize = true;
             this.lblEN.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEN.Location = new System.Drawing.Point(614, 70);
+            this.lblEN.Location = new System.Drawing.Point(619, 16);
             this.lblEN.Name = "lblEN";
             this.lblEN.Size = new System.Drawing.Size(57, 20);
             this.lblEN.TabIndex = 15;
             this.lblEN.Text = "English";
+            this.lblEN.Click += new System.EventHandler(this.lblEN_Click);
             // 
             // lblVN
             // 
+            this.lblVN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblVN.AutoSize = true;
             this.lblVN.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVN.Location = new System.Drawing.Point(91, 70);
+            this.lblVN.Location = new System.Drawing.Point(91, 16);
             this.lblVN.Name = "lblVN";
             this.lblVN.Size = new System.Drawing.Size(81, 20);
             this.lblVN.TabIndex = 15;
@@ -111,9 +119,10 @@ namespace GoogleTranslate
             // 
             // ptpHinh
             // 
+            this.ptpHinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptpHinh.Image = ((System.Drawing.Image)(resources.GetObject("ptpHinh.Image")));
             this.ptpHinh.InitialImage = null;
-            this.ptpHinh.Location = new System.Drawing.Point(329, 298);
+            this.ptpHinh.Location = new System.Drawing.Point(327, 281);
             this.ptpHinh.Name = "ptpHinh";
             this.ptpHinh.Size = new System.Drawing.Size(140, 140);
             this.ptpHinh.TabIndex = 16;
@@ -121,10 +130,11 @@ namespace GoogleTranslate
             // 
             // btnSpeak
             // 
+            this.btnSpeak.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSpeak.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSpeak.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSpeak.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSpeak.Location = new System.Drawing.Point(331, 238);
+            this.btnSpeak.Location = new System.Drawing.Point(329, 208);
             this.btnSpeak.Name = "btnSpeak";
             this.btnSpeak.Size = new System.Drawing.Size(138, 54);
             this.btnSpeak.TabIndex = 17;
@@ -132,17 +142,18 @@ namespace GoogleTranslate
             this.btnSpeak.UseVisualStyleBackColor = false;
             this.btnSpeak.Click += new System.EventHandler(this.btnSpeak_Click);
             // 
-            // cbbGioiTinh
+            // cbbGiongDoc
             // 
-            this.cbbGioiTinh.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbGioiTinh.FormattingEnabled = true;
-            this.cbbGioiTinh.Items.AddRange(new object[] {
+            this.cbbGiongDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbbGiongDoc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGiongDoc.FormattingEnabled = true;
+            this.cbbGiongDoc.Items.AddRange(new object[] {
             "Giọng Nam",
             "Giọng Nữ"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(331, 146);
-            this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(138, 26);
-            this.cbbGioiTinh.TabIndex = 18;
+            this.cbbGiongDoc.Location = new System.Drawing.Point(329, 94);
+            this.cbbGiongDoc.Name = "cbbGiongDoc";
+            this.cbbGiongDoc.Size = new System.Drawing.Size(138, 26);
+            this.cbbGiongDoc.TabIndex = 18;
             // 
             // pnTop
             // 
@@ -155,33 +166,43 @@ namespace GoogleTranslate
             // 
             // cbbChonNgonNgu
             // 
+            this.cbbChonNgonNgu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbbChonNgonNgu.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbChonNgonNgu.FormattingEnabled = true;
             this.cbbChonNgonNgu.Items.AddRange(new object[] {
             "Dịch Tiếng Anh",
             "Dịch Tiếng Việt"});
-            this.cbbChonNgonNgu.Location = new System.Drawing.Point(331, 104);
+            this.cbbChonNgonNgu.Location = new System.Drawing.Point(329, 43);
             this.cbbChonNgonNgu.Name = "cbbChonNgonNgu";
             this.cbbChonNgonNgu.Size = new System.Drawing.Size(138, 26);
             this.cbbChonNgonNgu.TabIndex = 20;
             this.cbbChonNgonNgu.SelectedIndexChanged += new System.EventHandler(this.cbbChonNgonNgu_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ptpHinh);
+            this.panel1.Controls.Add(this.cbbChonNgonNgu);
+            this.panel1.Controls.Add(this.lblEN);
+            this.panel1.Controls.Add(this.lblVN);
+            this.panel1.Controls.Add(this.rtxtVN);
+            this.panel1.Controls.Add(this.btnSpeak);
+            this.panel1.Controls.Add(this.cbbGiongDoc);
+            this.panel1.Controls.Add(this.rtxtEN);
+            this.panel1.Controls.Add(this.btnDichVanBan);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 475);
+            this.panel1.TabIndex = 21;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cbbChonNgonNgu);
+            this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnTop);
-            this.Controls.Add(this.cbbGioiTinh);
-            this.Controls.Add(this.btnSpeak);
-            this.Controls.Add(this.ptpHinh);
-            this.Controls.Add(this.lblVN);
-            this.Controls.Add(this.lblEN);
-            this.Controls.Add(this.btnDichVanBan);
-            this.Controls.Add(this.rtxtEN);
-            this.Controls.Add(this.rtxtVN);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -191,8 +212,9 @@ namespace GoogleTranslate
             ((System.ComponentModel.ISupportInitialize)(this.ptpHinh)).EndInit();
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -205,9 +227,10 @@ namespace GoogleTranslate
         private System.Windows.Forms.Label lblVN;
         private System.Windows.Forms.PictureBox ptpHinh;
         private System.Windows.Forms.Button btnSpeak;
-        private System.Windows.Forms.ComboBox cbbGioiTinh;
+        private System.Windows.Forms.ComboBox cbbGiongDoc;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.ComboBox cbbChonNgonNgu;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
