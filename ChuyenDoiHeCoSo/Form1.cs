@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -22,7 +15,7 @@ namespace WindowsFormsApplication1
 
         }
 
-/* ======================== ĐỔI TỪ DEC SANG BIN =================================== */
+        /* ======================== ĐỔI TỪ DEC SANG BIN =================================== */
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -31,7 +24,7 @@ namespace WindowsFormsApplication1
                 string a = textBox1.Text;
                 string[] b = a.Split('.'); //cat chuoi
 
-           /* ############## Doi phan nguyen ############*/
+                /* ############## Doi phan nguyen ############*/
 
                 Int32 n = Convert.ToInt32(b[0]);
                 Int32 i = 0;
@@ -44,7 +37,7 @@ namespace WindowsFormsApplication1
                     i++;
                 };
 
-          /* ############## Doi phan le ############*/
+                /* ############## Doi phan le ############*/
 
                 string f = "0." + b[1];
                 string s2 = "";
@@ -85,7 +78,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-/* ================================ ĐỔI TỪ  DEC SANG OCT ==================================== */
+        /* ================================ ĐỔI TỪ  DEC SANG OCT ==================================== */
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -112,7 +105,7 @@ namespace WindowsFormsApplication1
                 string f = "0." + P[1];
                 string s2 = "";
                 double g = Convert.ToDouble(f);
-             
+
                 Int32 w;
                 while (g != 0)//vong lap ket thuc khi phan le =0
                 {
@@ -148,10 +141,10 @@ namespace WindowsFormsApplication1
                 textBox2.Text = b;
             }
 
-           
+
         }
 
-/* ==================================== ĐỔI TỪ DEC SANG HEX ====================================== */
+        /* ==================================== ĐỔI TỪ DEC SANG HEX ====================================== */
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -196,9 +189,9 @@ namespace WindowsFormsApplication1
                 string f = "0." + P[1];
                 string s2 = "";
                 double g = Convert.ToDouble(f);
-                
+
                 Int64 w;
-                
+
                 while (g != 0)//vong lap ket thuc khi phan le =0
                 {
                     g = g * 16;
@@ -213,28 +206,28 @@ namespace WindowsFormsApplication1
                         else if (w == 14) s2 = s2 + "E";
                         else if (w == 15) s2 = s2 + "F";
                         else s2 = s2 + Convert.ToString(w);
-                            g = g - w;
-                        
+                        g = g - w;
+
                     }
                     else //lam tron > g
                     {
-                        if (w-1 == 10) s2 = s2 + "A";
-                        else if (w-1 == 11) s2 = s2 + "B";
-                        else if (w-1 == 12) s2 = s2 + "C";
-                        else if (w-1 == 13) s2 = s2 + "D";
-                        else if (w-1 == 14) s2 = s2 + "E";
+                        if (w - 1 == 10) s2 = s2 + "A";
+                        else if (w - 1 == 11) s2 = s2 + "B";
+                        else if (w - 1 == 12) s2 = s2 + "C";
+                        else if (w - 1 == 13) s2 = s2 + "D";
+                        else if (w - 1 == 14) s2 = s2 + "E";
                         else if (w - 1 == 15) s2 = s2 + "F";
                         else s2 = s2 + Convert.ToString(w - 1);//lam tron tang len 1 nen khi in phan nguyen phai tru 1
-                            g = g + 1 - w;//g phai tang len 1 roi moi tru cho phan nguyen
-                        
+                        g = g + 1 - w;//g phai tang len 1 roi moi tru cho phan nguyen
+
                     }
                     textBox2.Text = Convert.ToString(s1) + "." + s2;
                 };
-                
+
             }
 
             catch
-            
+
             {
                 string[] a;  // vi he thap luc phan la chuoi
                 a = new string[50];
@@ -268,7 +261,7 @@ namespace WindowsFormsApplication1
 
         }
 
-/* ================================= ĐỔI TỪ BIN SANG DEC ========================================= */
+        /* ================================= ĐỔI TỪ BIN SANG DEC ========================================= */
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -311,7 +304,7 @@ namespace WindowsFormsApplication1
                 textBox2.Text = Convert.ToString(z);
             }
 
-            catch 
+            catch
             {
                 Int32 n = Int32.Parse(textBox1.Text);
                 double s = 0, i = 0, k = 0;
@@ -328,82 +321,82 @@ namespace WindowsFormsApplication1
 
         }
 
-/* ==================================== ĐỔI TỪ BIN SANG OCT ======================================= */
+        /* ==================================== ĐỔI TỪ BIN SANG OCT ======================================= */
 
         private void button5_Click(object sender, EventArgs e)
         {
-          try
-          {
-            string a = textBox1.Text;
-            string[] P = a.Split('.');
-
-            /* ############ doi phan nguyen ############ */
-            
-              // DOI TU BIN SANG DEC
-
-            Int32 n1 = Convert.ToInt32(P[0]);
-            double s1 = 0, i = 0, k = 0;
-            while (n1 > 0)
+            try
             {
-                k = n1 % 10; // lay ra phan tu cuoi cung cua bin
-                n1 = n1 / 10;
-                s1 = s1 + k * Math.Pow(2, i);
-                i++;
-            };
+                string a = textBox1.Text;
+                string[] P = a.Split('.');
 
-            //DOI TU DEC SANG OCT
+                /* ############ doi phan nguyen ############ */
 
-            Int32 n = Convert.ToInt32(s1);
-            double s2 = 0,l=0;// s phai la kieu double vi chua ham mu
-            while (n > 0)
-            {
-                k = n % 8;
-                n = n / 8;
-                s2 = s2 + k * Math.Pow(10, l);// dao nguoc so k vua tinh thanh oct can tim
-                l++;
-            };
+                // DOI TU BIN SANG DEC
 
-          /* ############ doi phan le ############ */
+                Int32 n1 = Convert.ToInt32(P[0]);
+                double s1 = 0, i = 0, k = 0;
+                while (n1 > 0)
+                {
+                    k = n1 % 10; // lay ra phan tu cuoi cung cua bin
+                    n1 = n1 / 10;
+                    s1 = s1 + k * Math.Pow(2, i);
+                    i++;
+                };
 
-            // DOI TU BIN SANG DEC
- 
-            string n2 = P[1];//phan sau dau cham
-            Int32 j = n2.Length;//dem chieu dai chuoi
+                //DOI TU DEC SANG OCT
 
-            Int32 m = Convert.ToInt32(n2);//chuyen kieu chuoi sang kieu int
-            double s3 = 0;
-            Int32 t = 0;
-            while (j > 0)
-            {
-                t = m % 10;
-                m = m / 10;
-                s3 = s3 + t * Math.Pow(2, (-1) * j);
-                j--;
+                Int32 n = Convert.ToInt32(s1);
+                double s2 = 0, l = 0;// s phai la kieu double vi chua ham mu
+                while (n > 0)
+                {
+                    k = n % 8;
+                    n = n / 8;
+                    s2 = s2 + k * Math.Pow(10, l);// dao nguoc so k vua tinh thanh oct can tim
+                    l++;
+                };
 
+                /* ############ doi phan le ############ */
+
+                // DOI TU BIN SANG DEC
+
+                string n2 = P[1];//phan sau dau cham
+                Int32 j = n2.Length;//dem chieu dai chuoi
+
+                Int32 m = Convert.ToInt32(n2);//chuyen kieu chuoi sang kieu int
+                double s3 = 0;
+                Int32 t = 0;
+                while (j > 0)
+                {
+                    t = m % 10;
+                    m = m / 10;
+                    s3 = s3 + t * Math.Pow(2, (-1) * j);
+                    j--;
+
+                }
+                //DOI TU DEC SANG OCT
+
+                string s4 = "";
+                double g = s3;
+                Int32 w;
+                while (g != 0)//vong lap ket thuc khi phan le =0
+                {
+                    g = g * 8;
+                    w = Convert.ToInt32(g);//phan nguyen co lam tron
+                    if (w <= g)//lam tron < g
+                    {
+                        s4 = s4 + Convert.ToString(w);
+                        g = g - w;
+                    }
+                    else //lam tron > g
+                    {
+                        s4 = s4 + Convert.ToString(w - 1);//lam tron tang len 1 nen khi in phan nguyen phai tru 1
+                        g = g + 1 - w;//g phai tang len 1 roi moi tru cho phan nguyen
+                    }
+                };
+                textBox2.Text = Convert.ToString(s2) + '.' + s4;
             }
-            //DOI TU DEC SANG OCT
-            
-            string s4 = "";
-            double g = s3;
-            Int32 w;
-            while (g != 0)//vong lap ket thuc khi phan le =0
-            {
-                g = g * 8;
-                w = Convert.ToInt32(g);//phan nguyen co lam tron
-                if (w <= g)//lam tron < g
-                {
-                    s4 = s4 + Convert.ToString(w);
-                    g = g - w;
-                }
-                else //lam tron > g
-                {
-                    s4 = s4 + Convert.ToString(w - 1);//lam tron tang len 1 nen khi in phan nguyen phai tru 1
-                    g = g + 1 - w;//g phai tang len 1 roi moi tru cho phan nguyen
-                }
-            };
-            textBox2.Text = Convert.ToString(s2)+ '.'+s4;
-          }
-      catch
+            catch
             {
                 //DOI TU BIN SANG DEC
                 string a = textBox1.Text;
@@ -432,64 +425,64 @@ namespace WindowsFormsApplication1
             }
         }
 
-/* ================================== ĐỔI TỪ BIN SANG HEX ========================================== */
+        /* ================================== ĐỔI TỪ BIN SANG HEX ========================================== */
 
         private void button6_Click(object sender, EventArgs e)
         {
             try
-          {
-            string c = textBox1.Text;
-            string[] P = c.Split('.');
-
-          /* ############## doi phan nguyen ############# */
-
-            // DOI TU BIN SANG DEC  
-
-            Int32 n = Convert.ToInt32(P[0]);
-            double s1 = 0, i = 0, k = 0;
-            while (n > 0)
             {
-                k = n % 10; //lay ra phan tu cuoi cung cua bin
-                n = n / 10;
-                s1 = s1 + k * Math.Pow(2,i);
-                i++;
-            };
+                string c = textBox1.Text;
+                string[] P = c.Split('.');
 
-            // DOI TU DEC SANG HEX
+                /* ############## doi phan nguyen ############# */
 
-            string[] a;
-            a = new string[50];
-            string s2 = "";
+                // DOI TU BIN SANG DEC  
 
-            /*   lay so thap phan s vua tim doi thanh kieu so nguyen
-                  roi chuyen thanh he thap luc phan    */
-            
-            Int32 m = Convert.ToInt32(s1);
-            int q= 0;
-            while (m > 0)
-            {
+                Int32 n = Convert.ToInt32(P[0]);
+                double s1 = 0, i = 0, k = 0;
+                while (n > 0)
+                {
+                    k = n % 10; //lay ra phan tu cuoi cung cua bin
+                    n = n / 10;
+                    s1 = s1 + k * Math.Pow(2, i);
+                    i++;
+                };
 
-                a[q] = Convert.ToString(m % 16);  // vi a[q] thuoc kieu string
-                m = m / 16;
-                q++;
-            };
-            //in ra he thap luc phan
-            for (Int32 j = q - 1; j >= 0; j--)
-            {
-                if (a[j] == "10") a[j] = "A";//a[j] la kieu chuoi
-                if (a[j] == "11") a[j] = "B";
-                if (a[j] == "12") a[j] = "C";
-                if (a[j] == "13") a[j] = "D";
-                if (a[j] == "14") a[j] = "E";
-                if (a[j] == "15") a[j] = "F";
+                // DOI TU DEC SANG HEX
 
-                s2 = s2+ a[j];
-            }
-         /* ################### doi phan le ################ */
+                string[] a;
+                a = new string[50];
+                string s2 = "";
 
-            // DOI TU BIN SANG DEC 
- 
-                 string n2 = P[1];//phan sau dau cham
+                /*   lay so thap phan s vua tim doi thanh kieu so nguyen
+                      roi chuyen thanh he thap luc phan    */
+
+                Int32 m = Convert.ToInt32(s1);
+                int q = 0;
+                while (m > 0)
+                {
+
+                    a[q] = Convert.ToString(m % 16);  // vi a[q] thuoc kieu string
+                    m = m / 16;
+                    q++;
+                };
+                //in ra he thap luc phan
+                for (Int32 j = q - 1; j >= 0; j--)
+                {
+                    if (a[j] == "10") a[j] = "A";//a[j] la kieu chuoi
+                    if (a[j] == "11") a[j] = "B";
+                    if (a[j] == "12") a[j] = "C";
+                    if (a[j] == "13") a[j] = "D";
+                    if (a[j] == "14") a[j] = "E";
+                    if (a[j] == "15") a[j] = "F";
+
+                    s2 = s2 + a[j];
+                }
+                /* ################### doi phan le ################ */
+
+                // DOI TU BIN SANG DEC 
+
+                string n2 = P[1];//phan sau dau cham
                 Int32 l = n2.Length;//dem chieu dai chuoi
 
                 Int32 h = Convert.ToInt32(n2);//chuyen kieu chuoi sang kieu int
@@ -504,12 +497,12 @@ namespace WindowsFormsApplication1
 
                 }
                 // DOI TU DEC SANG HEX
-                
+
                 string s4 = "";
                 double g = s3;
-                
+
                 Int64 w;
-                
+
                 while (g != 0)//vong lap ket thuc khi phan le =0
                 {
                     g = g * 16;
@@ -524,74 +517,74 @@ namespace WindowsFormsApplication1
                         else if (w == 14) s4 = s4 + "E";
                         else if (w == 15) s4 = s4 + "F";
                         else s4 = s4 + Convert.ToString(w);
-                            g = g - w;
-                        
+                        g = g - w;
+
                     }
                     else //lam tron > g
                     {
-                        if (w-1 == 10) s4 = s4 + "A";
-                        else if (w-1 == 11) s4 = s4 + "B";
-                        else if (w-1 == 12) s4 = s4 + "C";
-                        else if (w-1 == 13) s4 = s4 + "D";
-                        else if (w-1 == 14) s4 = s4 + "E";
+                        if (w - 1 == 10) s4 = s4 + "A";
+                        else if (w - 1 == 11) s4 = s4 + "B";
+                        else if (w - 1 == 12) s4 = s4 + "C";
+                        else if (w - 1 == 13) s4 = s4 + "D";
+                        else if (w - 1 == 14) s4 = s4 + "E";
                         else if (w - 1 == 15) s4 = s4 + "F";
-                        else s4= s4 + Convert.ToString(w - 1);//lam tron tang len 1 nen khi in phan nguyen phai tru 1
-                            g = g + 1 - w;//g phai tang len 1 roi moi tru cho phan nguyen
+                        else s4 = s4 + Convert.ToString(w - 1);//lam tron tang len 1 nen khi in phan nguyen phai tru 1
+                        g = g + 1 - w;//g phai tang len 1 roi moi tru cho phan nguyen
                     }
                 }
-                    textBox2.Text = Convert.ToString(s2) + "." + s4;
-               
+                textBox2.Text = Convert.ToString(s2) + "." + s4;
+
             }
-    catch
-         {
-             // DOI TU BIN SANG DEC  
-
-            Int32 n = Int32.Parse(textBox1.Text);
-            double s = 0, i = 0, k = 0;
-            while (n > 0)
+            catch
             {
-                k = n % 10; //lay ra phan tu cuoi cung cua bin
-                n = n / 10;
-                s = s + k * Math.Pow(2,i);
-                i++;
-            };
+                // DOI TU BIN SANG DEC  
 
-            // DOI TU DEC SANG HEX
+                Int32 n = Int32.Parse(textBox1.Text);
+                double s = 0, i = 0, k = 0;
+                while (n > 0)
+                {
+                    k = n % 10; //lay ra phan tu cuoi cung cua bin
+                    n = n / 10;
+                    s = s + k * Math.Pow(2, i);
+                    i++;
+                };
 
-            string[] a;
-            a = new string[50];
-            string b = "";
+                // DOI TU DEC SANG HEX
 
-            /*   lay so thap phan s vua tim doi thanh kieu so nguyen
-                  roi chuyen thanh he thap luc phan    */
-            
-            Int32 m = Convert.ToInt32(s);
-            int q= 0;
-            while (m > 0)
-            {
+                string[] a;
+                a = new string[50];
+                string b = "";
 
-                a[q] = Convert.ToString(m % 16);  // vi a[q] thuoc kieu string
-                m = m / 16;
-                q++;
-            };
-            //in ra he thap luc phan
-            for (Int32 j = q - 1; j >= 0; j--)
-            {
-                if (a[j] == "10") a[j] = "A";//a[j] la kieu chuoi
-                if (a[j] == "11") a[j] = "B";
-                if (a[j] == "12") a[j] = "C";
-                if (a[j] == "13") a[j] = "D";
-                if (a[j] == "14") a[j] = "E";
-                if (a[j] == "15") a[j] = "F";
+                /*   lay so thap phan s vua tim doi thanh kieu so nguyen
+                      roi chuyen thanh he thap luc phan    */
 
-                b = b + a[j];
+                Int32 m = Convert.ToInt32(s);
+                int q = 0;
+                while (m > 0)
+                {
+
+                    a[q] = Convert.ToString(m % 16);  // vi a[q] thuoc kieu string
+                    m = m / 16;
+                    q++;
+                };
+                //in ra he thap luc phan
+                for (Int32 j = q - 1; j >= 0; j--)
+                {
+                    if (a[j] == "10") a[j] = "A";//a[j] la kieu chuoi
+                    if (a[j] == "11") a[j] = "B";
+                    if (a[j] == "12") a[j] = "C";
+                    if (a[j] == "13") a[j] = "D";
+                    if (a[j] == "14") a[j] = "E";
+                    if (a[j] == "15") a[j] = "F";
+
+                    b = b + a[j];
+                }
+
+                textBox2.Text = b;
             }
-
-            textBox2.Text = b;
-         }
         }
-  
-/* ========================================= ĐỔI TỪ OCT SANG DEC ============================================= */
+
+        /* ========================================= ĐỔI TỪ OCT SANG DEC ============================================= */
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -655,7 +648,7 @@ namespace WindowsFormsApplication1
         }
 
 
-/* =================================== ĐỔI TỪ OCT SANG BIN ========================================*/
+        /* =================================== ĐỔI TỪ OCT SANG BIN ========================================*/
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -760,7 +753,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-/* ===================================== ĐỔI TỪ OCT SANG HEX =============================================== */
+        /* ===================================== ĐỔI TỪ OCT SANG HEX =============================================== */
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -769,7 +762,7 @@ namespace WindowsFormsApplication1
                 string b = textBox1.Text;
                 string[] P = b.Split('.');
 
-              /* ############## doi phan nguyen ############ */
+                /* ############## doi phan nguyen ############ */
 
                 //DOI TU OCT SANG DEC
 
@@ -917,7 +910,7 @@ namespace WindowsFormsApplication1
             }
 
         }
-/* ================================== ĐỔI TỪ HEX SANG DEC ========================================= */
+        /* ================================== ĐỔI TỪ HEX SANG DEC ========================================= */
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -926,9 +919,9 @@ namespace WindowsFormsApplication1
                 string c = textBox1.Text;
                 string[] P = c.Split('.');
 
-          /* ############## doi phan nguyen ############# */
-                
-                string n1=P[0];
+                /* ############## doi phan nguyen ############# */
+
+                string n1 = P[0];
                 string[] a;
                 string[] b;
                 a = new string[100];
@@ -937,7 +930,7 @@ namespace WindowsFormsApplication1
                 double s1 = 0, j = 0;
                 while (i >= 0)
                 {
-                    a[i] = n1.Substring(i,1);// cat chuoi co do dai bang 1
+                    a[i] = n1.Substring(i, 1);// cat chuoi co do dai bang 1
                     if (a[i] == "A") b[i] = "10";
                     else if (a[i] == "B") b[i] = "11";
                     else if (a[i] == "C") b[i] = "12";
@@ -950,19 +943,19 @@ namespace WindowsFormsApplication1
                     j++;//so mu 16 tang
 
                 }
-         /* ############## doi phan le ############# */
+                /* ############## doi phan le ############# */
 
                 string n2 = P[1];
                 string[] A;
                 string[] B;
                 A = new string[100];
-                B= new string[100];
+                B = new string[100];
                 Int32 l = n2.Length - 1;// l bang chieu dai chuoi
                 double s2 = 0;
                 while (l >= 0)
                 {
                     A[l] = n2.Substring(l, 1);// cat chuoi co do dai bang 1
-                    if      (A[l] == "A")   B[l] = "10";
+                    if (A[l] == "A") B[l] = "10";
                     else if (A[l] == "B") B[l] = "11";
                     else if (A[l] == "C") B[l] = "12";
                     else if (A[l] == "D") B[l] = "13";
@@ -1000,20 +993,20 @@ namespace WindowsFormsApplication1
                     j++;//so mu 16 tang
 
                 }
-                    textBox2.Text = Convert.ToString(s);
+                textBox2.Text = Convert.ToString(s);
             }
         }
 
-/* ======================================= ĐỔI TỪ HEX SANG BIN ===================================== */
+        /* ======================================= ĐỔI TỪ HEX SANG BIN ===================================== */
 
         private void button11_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 string c = textBox1.Text;
                 string[] P = c.Split('.');
 
-         /* ############## doi phan nguyen ############# */
+                /* ############## doi phan nguyen ############# */
 
                 // DOI TU HEX SANG DEC
 
@@ -1052,7 +1045,7 @@ namespace WindowsFormsApplication1
                     t++;
                 }
 
-        /* ############## doi phan le ############# */
+                /* ############## doi phan le ############# */
 
                 // DOI TU HEX SANG DEC
 
@@ -1088,7 +1081,7 @@ namespace WindowsFormsApplication1
                     w = Convert.ToInt32(g);//phan nguyen co lam tron
                     if (w <= g)//lam tron < g
                     {
-                        s4 = s4+ Convert.ToString(w);
+                        s4 = s4 + Convert.ToString(w);
                         g = g - w;
                     }
                     else //lam tron > g
@@ -1097,7 +1090,7 @@ namespace WindowsFormsApplication1
                         g = g + 1 - w;//g phai tang len 1 roi moi tru cho phan nguyen
                     }
                 }
-                textBox2.Text = Convert.ToString(s2)+'.'+Convert.ToString(s4);
+                textBox2.Text = Convert.ToString(s2) + '.' + Convert.ToString(s4);
 
             }
             catch
@@ -1141,20 +1134,20 @@ namespace WindowsFormsApplication1
             }
         }
 
-/* ================================= ĐỔI TỪ HEX SANG OCT ===================================== */
+        /* ================================= ĐỔI TỪ HEX SANG OCT ===================================== */
 
         private void button12_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 string c = textBox1.Text;
                 string[] P = c.Split('.');
 
-          /* ############## doi phan nguyen ############# */
-                
+                /* ############## doi phan nguyen ############# */
+
                 //DOI TU HEX SANG DEC
 
-                string n1=P[0];
+                string n1 = P[0];
                 string[] a;
                 string[] b;
                 a = new string[100];
@@ -1189,7 +1182,7 @@ namespace WindowsFormsApplication1
                     t++;
                 };
 
-        /* ############## doi phan le ############# */
+                /* ############## doi phan le ############# */
 
                 // DOI TU HEX SANG DEC
 
@@ -1210,11 +1203,11 @@ namespace WindowsFormsApplication1
                     else if (A[l] == "E") B[l] = "14";
                     else if (A[l] == "F") B[l] = "15";
                     else B[l] = A[l];
-                    s3= s3 + Convert.ToDouble(B[l]) * Math.Pow(16, (-1) * (l + 1));
+                    s3 = s3 + Convert.ToDouble(B[l]) * Math.Pow(16, (-1) * (l + 1));
                     l--;//chieu dai chuoi giam
                 }
 
-               // DOI TU DEC SANG OCT
+                // DOI TU DEC SANG OCT
 
                 string s4 = "";
                 double g = s3;
@@ -1236,7 +1229,7 @@ namespace WindowsFormsApplication1
                     }
                 };
                 textBox2.Text = Convert.ToString(s2) + '.' + Convert.ToString(s4);
-        }
+            }
 
             catch
             {
@@ -1281,7 +1274,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-    private void button13_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Họ & tên: Đoàn Quang Huy\rMSSV: 2015597\rLớp: CTK44B\rTrường Đại Học Đà Lạt", "Thông tin chương trình", MessageBoxButtons.OK, MessageBoxIcon.Information);
             System.Diagnostics.Process.Start("https://www.facebook.com/quanghuybest2k2/");

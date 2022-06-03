@@ -20,7 +20,7 @@ namespace GoogleTranslate
         public string TranslateText(string input)
         {
             string url = "";
-            if (cbbChonNgonNgu.SelectedIndex == 0)
+            if (cbbChonNgonNgu.SelectedIndex==0)
             {
                 url = String.Format
             ("https://translate.googleapis.com/translate_a/single?client=gtx&sl={0}&tl={1}&dt=t&q={2}",

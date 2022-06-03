@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QuanLyIdolJavModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_nhanvien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYSINH" Type="datetime" />
+          <Property Name="GIOITINH" Type="bit" />
+          <Property Name="CCCD" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+          <Property Name="HINHANH" Type="varbinary(max)" />
+          <Property Name="IDPB" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_PHONGBAN">
+          <Key>
+            <PropertyRef Name="IDPB" />
+          </Key>
+          <Property Name="IDPB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENPB" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="QuanLyIdolJavModelStoreContainer">
+          <EntitySet Name="tb_nhanvien" EntityType="Self.tb_nhanvien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PHONGBAN" EntityType="Self.tb_PHONGBAN" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyIdolJavModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_nhanvien">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+          <Property Name="GIOITINH" Type="Boolean" />
+          <Property Name="CCCD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IDPB" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="QuanLyIdolJavEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_nhanvien" EntityType="Self.tb_nhanvien" />
+          <EntitySet Name="tb_PHONGBAN" EntityType="QuanLyIdolJavModel.tb_PHONGBAN" />
+        </EntityContainer>
+        <EntityType Name="tb_PHONGBAN">
+          <Key>
+            <PropertyRef Name="IDPB" />
+          </Key>
+          <Property Name="IDPB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENPB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyIdolJavModelStoreContainer" CdmEntityContainer="QuanLyIdolJavEntities">
+          <EntitySetMapping Name="tb_nhanvien">
+            <EntityTypeMapping TypeName="QuanLyIdolJavModel.tb_nhanvien">
+              <MappingFragment StoreEntitySet="tb_nhanvien">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="IDPB" ColumnName="IDPB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PHONGBAN">
+            <EntityTypeMapping TypeName="QuanLyIdolJavModel.tb_PHONGBAN">
+              <MappingFragment StoreEntitySet="tb_PHONGBAN">
+                <ScalarProperty Name="TENPB" ColumnName="TENPB" />
+                <ScalarProperty Name="IDPB" ColumnName="IDPB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
