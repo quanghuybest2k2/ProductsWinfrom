@@ -14,18 +14,10 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-/**********************************************************************
-/**Description:	Đề tài Memory Game                                    *
-/**Params :	                                                      *
-/**Write by: Nguyễn Minh Sang DHTH7B                                  *
-/**Create date:	                                                      *
-**********************************************************************/
-
 namespace Memory_Game
 {
     public partial class FrmMemory : Form
     {
-        //Download source code tại Sharecode.vn
         public FrmMemory()
         {
             InitializeComponent();
