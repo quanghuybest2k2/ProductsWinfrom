@@ -33,6 +33,8 @@ namespace SpeechVietnamese
             this.btnPause = new System.Windows.Forms.Button();
             this.btnResume = new System.Windows.Forms.Button();
             this.cbbChonGiong = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblanswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnspeak
@@ -71,11 +73,32 @@ namespace SpeechVietnamese
             this.cbbChonGiong.Size = new System.Drawing.Size(121, 21);
             this.cbbChonGiong.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(259, 225);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblanswer
+            // 
+            this.lblanswer.AutoSize = true;
+            this.lblanswer.Location = new System.Drawing.Point(272, 177);
+            this.lblanswer.Name = "lblanswer";
+            this.lblanswer.Size = new System.Drawing.Size(41, 13);
+            this.lblanswer.TabIndex = 3;
+            this.lblanswer.Text = "answer";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblanswer);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbbChonGiong);
             this.Controls.Add(this.btnResume);
             this.Controls.Add(this.btnPause);
@@ -84,6 +107,7 @@ namespace SpeechVietnamese
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,6 +117,8 @@ namespace SpeechVietnamese
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnResume;
         private System.Windows.Forms.ComboBox cbbChonGiong;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblanswer;
     }
 }
 
