@@ -1,0 +1,31 @@
+B1: git init
+B2: git clone [url]
+B3: git add . + gỉt commit -m "mô tả"
+B4: git push
+-----------------
+update project
+git status
+git add .
+git commit -m "update project"
+git push
+---------------
+update project from remote to local
+git pull
+---------------
+git branch => kiểm tra branch
+git branch [tên branch] => tạo branch
+git checkout [tên branch] => chọn branch
+------
+create new
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin [url]
+git push -u origin main
+----
+push existing
+git remote add origin [url]
+git branch -M main
+git push -u origin main
