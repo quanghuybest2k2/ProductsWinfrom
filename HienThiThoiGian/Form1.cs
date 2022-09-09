@@ -42,7 +42,7 @@ namespace HienThiThoiGian
         {
             switch (_gio)
             {
-                case "11" when (_phut == "31"):
+                case "10" when (_phut == "11"):
                     notifyThongBao.ShowBalloonTip(1000, "Nhắc nhở học bài", "Bạn ơi! mới đó mà đã nản rồi ư? Sắp thành công rồi mà", ToolTipIcon.None);
                     timerNhacNho.Stop();// hiển thị 1 lần rồi dừng, tránh lặp
                     break;
